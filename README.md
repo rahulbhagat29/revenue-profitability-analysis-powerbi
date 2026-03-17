@@ -100,6 +100,7 @@ Data Schema (Raw Dataset):
 | Transaction_Status   | Completed / Other       |
 
 Time Period Covered: FY2022 — FY2024
+
 Total Rows After Cleaning: 14,280
 
 
@@ -112,8 +113,6 @@ Power Query (M)
 DAX
 
 Excel / CSV
-
-GitHub
 
 ⚠️ Limitations
 
