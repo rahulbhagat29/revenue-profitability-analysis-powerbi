@@ -93,27 +93,13 @@ Revenue Drivers → Stream contribution
 Efficiency → Revenue per employee
 
 📊 Data Overview
+The analysis uses a raw transactional dataset cleaned and transformed entirely within Power Query before loading into the Power BI data model.
+Each row represents a single financial transaction record.
+Data Schema (Raw Dataset):
+Column NameDescriptionTransaction_IDUnique transaction identifierTransaction_DateDate of transaction (6 mixed formats — cleaned)Month_Name / Month_NumberCalendar month for trend slicingFiscal_YearFinancial year (2022, 2023, 2024)QuarterDerived from Transaction_Date in Power QueryDepartmentDepartment name (36 raw variants — standardised to 8)Cost_CenterDepartment cost centre codeCategoryRevenue or Expense (4.4% blank — isolated as Unclassified)Sub_Category25 revenue and expense sub-typesRegion5 global regionsCurrencyUSD, EUR, GBP, AEDActual_AmountTransaction amount in local currencyBudget_AmountApproved budget amount (7% missing — flagged)Profit_Margin_PctMargin % — cross-validated against Actual/BudgetIs_Recurring_RevenueYes/No flag for ARR calculationContract_TypeAnnual, Monthly, One-timeDept_HeadcountHeadcount per department per yearTransaction_StatusCompleted, Pending, Cancelled, FailedPayment_MethodBank Transfer, Wire, ACH, Credit Card, OnlineApproved_ByApproving manager (8.3% missing — flagged)NotesFree-text audit trail for reversals and approvals
+Time Period Covered: FY2022 — FY2024
+Total Rows After Cleaning: 14,280
 
-Each row represents a financial transaction.
-
-Column Name	Description
-Transaction_ID	Unique transaction identifier
-Transaction_Date	Date of transaction
-Fiscal_Year	Financial year
-Quarter	Derived time period
-Department	Standardized department name
-Category	Revenue or Expense
-Sub_Category	Transaction type
-Region	Geographic region
-Currency	Transaction currency
-Actual_Amount	Transaction value
-Budget_Amount	Planned budget
-Is_Recurring_Revenue	Recurring revenue flag
-Dept_Headcount	Department headcount
-Transaction_Status	Transaction state
-
-Time Period: FY2022–FY2024
-Total Records: 14,280
 
 🛠 Technical Stack
 
