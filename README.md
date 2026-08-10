@@ -25,6 +25,8 @@ This analysis answers three critical executive questions:
 
 **Revenue Performance:** Total revenue reached $911M across FY2022–2024 with an Operating Margin of 24.5%, sitting within the healthy SaaS benchmark of 20–28%. Revenue peaked at $410M in 2023 — a 58% increase over 2022 — before declining 39% in 2024, signalling a market-level correction across all revenue departments simultaneously.
 
+<img width="2706" height="1345" alt="Trade   Variance" src="https://github.com/user-attachments/assets/5853f32d-f37e-4fd2-808b-7c56574a2eb5" />
+
 **Budget Variance — Critical Finding:** Marketing overspent its expense budget by 32%, the largest variance across all departments. Operations overspent by 14% and Technology by 8%. Customer Success and Sales came in under budget, demonstrating disciplined cost management.
 
 **Recurring Revenue Health:** 50.6% of total revenue is recurring — Subscription Fees, Renewal Revenue, and New ARR — exceeding the 40% SaaS benchmark and providing leadership with a predictable cash flow base for planning.
