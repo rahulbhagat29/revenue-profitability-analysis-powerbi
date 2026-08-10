@@ -21,13 +21,15 @@ This analysis answers three critical executive questions:
 
 ## 🎯 Key Findings
 
-<img width="2718" height="1352" alt="image" src="https://github.com/user-attachments/assets/06835594-e495-44e3-b515-da2154f715c7" />
+<img width="2718" height="1352" alt="Executive Summary" src="https://github.com/user-attachments/assets/bbec6c0e-00b6-492e-8733-b906f48dbccd" />
 
 **Revenue Performance:** Total revenue reached $911M across FY2022–2024 with an Operating Margin of 24.5%, sitting within the healthy SaaS benchmark of 20–28%. Revenue peaked at $410M in 2023 — a 58% increase over 2022 — before declining 39% in 2024, signalling a market-level correction across all revenue departments simultaneously.
 
 **Budget Variance — Critical Finding:** Marketing overspent its expense budget by 32%, the largest variance across all departments. Operations overspent by 14% and Technology by 8%. Customer Success and Sales came in under budget, demonstrating disciplined cost management.
 
 **Recurring Revenue Health:** 50.6% of total revenue is recurring — Subscription Fees, Renewal Revenue, and New ARR — exceeding the 40% SaaS benchmark and providing leadership with a predictable cash flow base for planning.
+
+<img width="2703" height="1348" alt="Department Deep Dive" src="https://github.com/user-attachments/assets/339ad578-c7b0-4f8f-9f25-e262edf150c0" />
 
 **Revenue per Employee:** Sales generates $11.3M revenue per employee — more than 3x the next department — confirming that Sales headcount delivers the highest return on people investment across the organisation.
 
