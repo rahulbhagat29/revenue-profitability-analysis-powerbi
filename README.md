@@ -1,179 +1,207 @@
-# 📊 FinEdge Solutions — Financial Performance Dashboard
+# 📊 FinEdge Solutions — Where Is the Margin Going?
 
-> **Data provenance:** this project uses a simulated dataset. All figures are outcomes of the analysis, not client results.
+![Power BI](https://img.shields.io/badge/Power%20BI-3--page%20report-F2C811?logo=powerbi&logoColor=black)
+![Power Query](https://img.shields.io/badge/Power%20Query%20(M)-9%20data%20fixes-742774)
+![DAX](https://img.shields.io/badge/DAX-17%20measures-0B6E4F)
+![Data](https://img.shields.io/badge/Data-simulated%20SaaS%20fintech-2E7D32)
 
-## 📊 Live Dashboard
+> **⚡ 30-second version**
+> - 🎯 **Question:** is this B2B SaaS fintech running a healthy margin, where are budgets breaking, and is the 2024 revenue drop one team's problem or the whole market's?
+> - 💰 **Margin:** $911M revenue (USD, FY2022–24) at a **24.5% operating margin**, inside the 20–28% SaaS rule of thumb.
+> - 🚨 **Biggest leak:** Marketing overspent its budget by **32%**, the worst of 8 departments.
+> - 📉 **The drop:** revenue fell **39% in 2024** across every revenue department at once, which points to the market rather than one team.
+> - 🔁 **Cushion:** **50.6%** of revenue is recurring.
 
-[View interactive Power BI dashboard (public, no login)](https://app.powerbi.com/view?r=eyJrIjoiOGJjZDlhMjgtYmQzYS00OWRmLWEzYTgtM2FjMjMxYTY2OTkxIiwidCI6Ijk2NmMyMmM4LWY2NTUtNDQ1Ny1iYmM3LTEwMmMwZTgyMDU0OCJ9&embedImagePlaceholder=true)
-
----
-
-## 📌 Business Problem
-
-FinEdge Solutions, a B2B SaaS fintech company, had three years of financial transaction data across 8 departments, 5 global regions, and multiple revenue streams. However, leadership lacked structured visibility into whether expenses were under control, which departments were destroying margin, and whether the 2024 revenue decline was a temporary correction or a structural problem.
-
-Without a clean, consolidated financial view, the company could not answer critical profitability questions:
-
-- Which departments are consistently overspending their budgets?
-- Is revenue growth translating into sustainable operating margin?
-- Are recurring revenue streams healthy enough to support future planning?
-- Where should leadership cut or invest heading into the next fiscal year?
-
-This analysis answers three critical executive questions:
-
-- Is the business operating within a healthy margin benchmark?
-- Where are the budget overruns and how severe are they?
-- Is the 2024 revenue decline department-specific or market-wide?
+> **Data provenance:** simulated dataset. All figures are outcomes of the analysis, not client results.
 
 ---
 
-## 🎯 Key Findings
+## 📊 Live dashboard
+
+👉 [**Open the interactive Power BI report**](https://app.powerbi.com/view?r=eyJrIjoiOGJjZDlhMjgtYmQzYS00OWRmLWEzYTgtM2FjMjMxYTY2OTkxIiwidCI6Ijk2NmMyMmM4LWY2NTUtNDQ1Ny1iYmM3LTEwMmMwZTgyMDU0OCJ9&embedImagePlaceholder=true) (public, no login)
+
+| Page | What it answers |
+|---|---|
+| 🧾 Executive Summary | Is the business healthy overall? |
+| 📈 Trend & Variance | How did revenue move, and which budgets broke? |
+| 👥 Department Deep-Dive | Which teams earn their headcount? |
+
+---
+
+## 🗺️ How the pipeline flows
+
+```mermaid
+flowchart LR
+    A[📥 Raw transactions<br/>14,290 rows, 4 currencies] --> B[🧹 Power Query<br/>9 data-quality fixes]
+    B --> C[✅ 14,280 clean rows<br/>USD scope]
+    C --> D[🧱 Data model<br/>8 departments × 5 regions]
+    D --> E[🧮 17 DAX measures]
+    E --> F[📊 3-page<br/>executive report]
+```
+
+---
+
+## 📦 Data at a glance
+
+| | |
+|---|---|
+| 📚 Source | Simulated B2B SaaS fintech transaction data |
+| 📆 Period | FY2022 – FY2024 |
+| 📏 Rows | 14,290 raw → **14,280** after removing 10 duplicate Transaction IDs |
+| 🧱 Grain | One row per financial transaction |
+| 🏢 Coverage | 8 departments · 5 regions · 25 sub-categories |
+| 💱 Currency | USD analysed; EUR, GBP and AED out of scope (no exchange-rate table) |
+
+---
+
+## 🔍 What the data says
+
+### 1️⃣ 💰 The margin is healthy
+
+| Metric | Result | Rule of thumb |
+|---|---|---|
+| Total revenue (USD) | **$911M** | — |
+| Operating margin | **24.5%** | 20–28% for SaaS ✅ |
+| Recurring revenue share | **50.6%** | 40%+ for SaaS ✅ |
 
 <img width="2718" height="1352" alt="Executive Summary" src="https://github.com/user-attachments/assets/bbec6c0e-00b6-492e-8733-b906f48dbccd" />
 
-**Revenue Performance:** Total revenue reached $911M across FY2022–2024 with an Operating Margin of 24.5%, sitting within the healthy SaaS benchmark of 20–28%. Revenue peaked at $410M in 2023 — a 58% increase over 2022 — before declining 39% in 2024, signalling a market-level correction across all revenue departments simultaneously.
+### 2️⃣ 📈📉 Boom, then a market-wide drop
 
-<img width="2706" height="1345" alt="Trade   Variance" src="https://github.com/user-attachments/assets/5853f32d-f37e-4fd2-808b-7c56574a2eb5" />
+- 🚀 **2023:** revenue peaked at **$410M**, up 58% on 2022
+- 📉 **2024:** revenue fell **39%**, across every revenue department at the same time
 
-**Budget Variance — Critical Finding:** Marketing overspent its expense budget by 32%, the largest variance across all departments. Operations overspent by 14% and Technology by 8%. Customer Success and Sales came in under budget, demonstrating disciplined cost management.
+When every revenue team drops together, the cause is usually outside the company. That points to a market correction, not one weak team.
 
-**Recurring Revenue Health:** 50.6% of total revenue is recurring — Subscription Fees, Renewal Revenue, and New ARR — exceeding the 40% SaaS benchmark and providing leadership with a predictable cash flow base for planning.
+### 3️⃣ 🚨 Where budgets broke
+
+```
+Expense vs budget
+Marketing         ████████████████  +32%  🔴  largest overrun
+Operations        ███████           +14%  🔴
+Technology        ████               +8%  🔴
+Customer Success  under budget            🟢
+Sales             under budget            🟢
+```
+
+<img width="2706" height="1345" alt="Trend and Variance" src="https://github.com/user-attachments/assets/5853f32d-f37e-4fd2-808b-7c56574a2eb5" />
+
+### 4️⃣ 👥 Which teams earn their headcount
+
+**Sales generates $11.3M revenue per employee**, more than 3× the next of the four revenue-generating departments.
 
 <img width="2703" height="1348" alt="Department Deep Dive" src="https://github.com/user-attachments/assets/339ad578-c7b0-4f8f-9f25-e262edf150c0" />
 
-**Revenue per Employee:** Sales generates $11.3M revenue per employee — more than 3x the next department — confirming that Sales headcount delivers the highest return on people investment across the organisation.
+---
+
+## 🧭 The decision
+
+**Do now**
+
+| | Action | Why |
+|---|---|---|
+| 🚨 | Audit Marketing spend | A 32% overrun in a pure cost centre isn't sustainable into FY2025 |
+| 🔍 | Diagnose the 2024 drop | Churn, renewals and pipeline coverage separate cyclical from structural |
+| 🧹 | Fix 629 unclassified transactions at source | The gap repeats every reporting cycle until it's fixed upstream |
+| 🛠️ | Review Technology costs | Overspend plus falling revenue squeezes margin from both sides |
+
+**Build next**
+
+- 📏 Make Operating Margin and Recurring Revenue % primary KPIs alongside total revenue
+- 🔁 Add rolling 12-month revenue tracking
+- 📅 Department-level variance dashboards for monthly CFO review
+- 💱 An exchange-rate table to bring EUR, GBP and AED into scope
 
 ---
 
-## 💼 Business Recommendations
+## 🧹 Nine data-quality fixes (all in Power Query)
 
-**Immediate Actions:**
-
-- Audit Marketing spend immediately — a 32% budget overrun in a pure cost centre with no direct revenue contribution is not sustainable heading into FY2025
-- Investigate the 2024 revenue decline through churn rates, contract renewal data, and pipeline coverage ratios to determine whether this is cyclical or structural
-- Resolve 629 unclassified transactions at source — this data governance gap will compound every reporting cycle until addressed
-- Review Technology cost structure — expense overspend combined with revenue decline in 2024 creates compressing net contribution from both sides
-
-**Strategic Direction:**
-
-- Adopt Operating Margin and Recurring Revenue % as primary KPIs alongside total revenue
-- Introduce rolling 12-month revenue trend tracking for forward-looking momentum assessment
-- Implement department-level budget variance dashboards for monthly CFO review
-- Build an exchange rate table to bring EUR, GBP, and AED transactions into scope for global reporting
+| | Problem found | What I did |
+|---|---|---|
+| 🏷️ | 107 raw department strings (24 distinct after case/space cleanup) | Mapped to 8 canonical departments via a lookup-table merge |
+| 📅 | Mixed date formats (ISO, DD-MM-YYYY, MM-DD-YYYY, DD-Mon-YY, slash) | Parsed with a custom M function |
+| 🔢 | 2.5% of Quarter values wrong | Re-derived Quarter from Transaction_Date |
+| 🕳️ | 7% of Budget_Amount missing | Flagged, not imputed; excluded from variance calcs only |
+| ❓ | 629 blank Category rows (4.4%) | Isolated as "Unclassified": a governance gap, not a cleaning call |
+| ↩️ | 140 reversals mixed into revenue | Separated using the Notes audit trail |
+| 👯 | 10 duplicate Transaction IDs | Removed (they inflated revenue and expense totals) |
+| 💱 | 4 currencies, no exchange-rate table | Scoped to USD rather than guess rates |
+| 📏 | Extreme transactions | Flagged above 3 standard deviations, excluded from expense aggregates |
 
 ---
 
-## 🔍 Analytical Approach
+## 🧮 The DAX layer — 17 measures
 
-**Data Cleaning (Power Query — 9 Issues Resolved):**
+- 💵 **Total Revenue / Total Expenses** with explicit filters: Completed status, USD scope, positive amounts
+- 📊 **Gross Profit and Operating Margin %** using safe `DIVIDE`
+- ⚖️ **Variance and Variance %**, built from Actual vs Budget (not pre-calculated in the source)
+- 👥 **Revenue and Cost per Employee**, linking output to headcount
+- 🔁 **Recurring Revenue %**, tracked against the SaaS benchmark
 
-- Standardised 107 raw department strings (24 distinct after case and whitespace normalisation) into 8 canonical departments using a lookup table merge
-- Parsed 6 mixed date formats (ISO, DD-MM-YYYY, MM-DD-YYYY, DD-Mon-YY, slash format) using a custom M parsing function
-- Derived Quarter directly from Transaction_Date to correct 2.5% of wrong entries in the raw Quarter column
-- Flagged 7% missing Budget_Amount rows rather than imputing — excluded from variance calculations only
-- Isolated 629 blank Category rows as Unclassified — data governance gap, not a cleaning decision
-- Separated 140 documented reversals from revenue using Notes column cross-reference
-- Removed 10 duplicate Transaction IDs inflating revenue and expense totals
-- Scoped analysis to USD transactions — 4 currencies present with no exchange rate table
-- Flagged outlier transactions above 3 standard deviations for exclusion from expense aggregates
+## 🎨 Report design
 
-**Revenue & Margin Analysis (DAX):**
-
-- Authored 17 DAX measures in total across the model (verified in Power BI Desktop, Model view)
-- Built Total Revenue and Total Expenses measures with explicit filters for Completed status, USD scope, and positive amounts
-- Calculated Gross Profit and Operating Margin % using safe DIVIDE logic
-- Built Variance and Variance % measures from Actual_Amount and Budget_Amount — not pre-calculated in source data
-- Implemented Revenue per Employee and Cost per Employee linking financial output to headcount investment
-- Created Recurring Revenue % to track SaaS health against industry benchmark
-
-**Risk & Overspend Analysis:**
-
-- Analysed Budget Variance % by department using conditional colour formatting to separate overspend from under-budget departments
-- Evaluated revenue stream concentration across 7 sub-categories to assess dependence risk
-- Measured Revenue per Employee across all 4 revenue-generating departments
-- Compared quarterly revenue trends across 3 fiscal years to identify seasonality and decline patterns
-
-**Visualisation:**
-
-- Designed a 3-page executive report (Exec Summary, Trend & Variance, Department Deep-Dive) with a custom JSON report theme and button-based page navigation
-- Applied a semantic colour system — purple/lavender for revenue and neutral metrics, coral for expenses and budget overrun, green for budget increases — so colour encodes meaning rather than acting as decoration
-- Built department and revenue-stream comparison visuals (bar, waterfall, horizontal bar) with year/quarter slicer filtering on the Trend & Variance page
-- Presented a balanced mix of KPI cards, trend lines, comparison bars, and ranking charts
+- 🧭 Three pages with button navigation and a custom JSON theme
+- 🎨 **Colour carries meaning, not decoration:** purple for revenue and neutral metrics, coral for expenses and overruns, green for budget increases
+- 🎚️ Year and quarter slicers on the Trend & Variance page
+- 📊 KPI cards, trend lines, comparison bars, waterfall and ranking charts
 
 ---
 
-## 📊 Data Overview
+<details>
+<summary>🗂️ <b>Raw data schema</b> (click to expand)</summary>
 
-The analysis uses a raw transactional dataset cleaned and transformed entirely within Power Query before loading into the Power BI data model.
-
-Each row represents a single financial transaction record.
-
-**Data Schema (Raw Dataset):**
-
-| Column Name | Description |
-| --- | --- |
+| Column | Description |
+|---|---|
 | Transaction_ID | Unique transaction identifier |
-| Transaction_Date | Date of transaction (6 mixed formats — cleaned) |
+| Transaction_Date | Date of transaction (mixed formats, cleaned) |
 | Month_Name / Month_Number | Calendar month for trend slicing |
-| Fiscal_Year | Financial year (2022, 2023, 2024) |
-| Quarter | Derived from Transaction_Date in Power Query |
-| Department | Department name (107 raw strings, 24 distinct after normalisation — standardised to 8) |
+| Fiscal_Year | 2022, 2023, 2024 |
+| Quarter | Re-derived from Transaction_Date |
+| Department | 107 raw strings → 8 canonical |
 | Cost_Center | Department cost centre code |
-| Category | Revenue or Expense (629 rows, 4.4%, blank — isolated as Unclassified) |
+| Category | Revenue or Expense (629 blank, isolated as Unclassified) |
 | Sub_Category | 25 revenue and expense sub-types |
 | Region | 5 global regions |
 | Currency | USD, EUR, GBP, AED |
-| Actual_Amount | Transaction amount in local currency |
-| Budget_Amount | Approved budget amount (7% missing — flagged) |
-| Profit_Margin_Pct | Margin % — cross-validated against Actual/Budget |
-| Is_Recurring_Revenue | Yes/No flag for ARR calculation |
+| Actual_Amount | Amount in local currency |
+| Budget_Amount | Approved budget (7% missing, flagged) |
+| Profit_Margin_Pct | Cross-validated against Actual/Budget |
+| Is_Recurring_Revenue | Yes/No flag for recurring revenue |
 | Contract_Type | Annual, Monthly, One-time |
 | Dept_Headcount | Headcount per department per year |
 | Transaction_Status | Completed, Pending, Cancelled, Failed |
 | Payment_Method | Bank Transfer, Wire, ACH, Credit Card, Online |
-| Approved_By | Approving manager (8.3% missing — flagged) |
+| Approved_By | Approving manager (8.3% missing, flagged) |
 | Notes | Free-text audit trail for reversals and approvals |
 
-**Data source:** Simulated B2B SaaS fintech transactional dataset. Not client data.
+</details>
 
-**Time Period Covered:** FY2022 — FY2024
+<details>
+<summary>🚧 <b>Limitations</b> (click to expand)</summary>
 
-**Raw Rows:** 14,290 &nbsp;|&nbsp; **Total Rows After Cleaning:** 14,280 (10 duplicate Transaction IDs removed)
+- **USD only:** EUR, GBP and AED transactions are excluded until an exchange-rate table exists.
+- **629 unclassified transactions** can't be allocated to Revenue or Expense without business context.
+- **Annual headcount:** intra-year hiring and exits don't show in monthly revenue per employee.
+- **No marketing attribution data:** the overrun can be sized, but not its return.
+- **2024 drop is not modelled against macro factors**; the market-wide reading is an inference from the pattern.
+- **Benchmarks are rules of thumb:** the 20–28% margin and 40% recurring figures aren't sourced to a specific study.
 
----
-
-## 🛠 Technical Stack
-
-- **Power BI Desktop:** Data modeling, dashboard development, conditional formatting, custom JSON report theming, button-based navigation
-- **Power Query (M):** Data cleaning, transformation, custom parsing functions
-- **DAX:** Financial measures, variance calculations, employee productivity metrics
-- **Excel / CSV:** Source dataset preparation and validation
-- **GitHub:** Version control and project portfolio hosting
+</details>
 
 ---
 
-## ⚠️ Limitations
+## 🔭 What I'd do next
 
-- Analysis is scoped to USD-denominated transactions only — EUR, GBP, and AED transactions excluded due to absence of an exchange rate table
-- 629 unclassified transactions could not be allocated to Revenue or Expense without business context
-- Headcount data is annual — intra-year hiring or departures are not reflected in monthly Revenue per Employee calculations
-- No marketing attribution data available to assess ROI on Marketing spend overruns
-- External macroeconomic factors contributing to the 2024 revenue decline are not modelled
-- SaaS benchmarks used for context (20–28% operating margin, 40% recurring revenue) are working rules of thumb, not sourced to a specific study
+- 💱 Exchange-rate dimension to bring all currencies into scope
+- 🔁 Rolling 12-month revenue and margin trend
+- 🔐 Row-level security so each department head sees only their cost centre
+- 📉 Churn and renewal data to explain the 2024 decline
+- 🔮 H2 reforecast from H1 actuals and variance trends
 
----
+## 🛠️ Tools
 
-## 🔮 Future Enhancements
-
-- Add an exchange rate dimension table to bring all currencies into scope for global reporting
-- Build a rolling 12-month revenue and margin trend for forward-looking momentum tracking
-- Implement row-level security so department heads see only their own cost centre data
-- Incorporate customer churn and renewal rate data to explain the 2024 revenue decline
-- Automate data refresh pipeline for monthly CFO reporting cycle
-- Add a budget reforecast model projecting Q3 and Q4 based on H1 actuals and variance trends
+Power BI Desktop · Power Query (M) · DAX · Excel / CSV · GitHub
 
 ---
 
-## 🔗 Connect
-
-**LinkedIn:** https://www.linkedin.com/in/rahulbhagat29
+*Part of Rahul Bhagat's Data Analytics Portfolio · [🌐 Portfolio](https://rahulbhagat29.github.io/) · [💼 LinkedIn](https://www.linkedin.com/in/rahulbhagat29) · [🐙 GitHub](https://github.com/rahulbhagat29)*
